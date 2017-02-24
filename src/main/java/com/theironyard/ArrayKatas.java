@@ -1,5 +1,8 @@
 package com.theironyard;
 
+import java.time.LocalDate;
+import java.util.Random;
+
 /**
  * This is another kata exercise. Follow the instructions below and implement
  * the methods as described.
@@ -18,6 +21,10 @@ public class ArrayKatas {
      * @return an array of five random ints
      */
     // todo: create fiveRandomInts() static method
+    public static int[] fiveRandomInts(){
+        Random random = new Random();
+        return new int[]{random.nextInt(), random.nextInt(), random.nextInt(), random.nextInt(), random.nextInt()};
+    }
 
     /**
      * Create a static method named threeArbitraryDates() that returns an array
@@ -27,6 +34,13 @@ public class ArrayKatas {
      * @return an array of three LocalDate objects
      */
     // todo: create threeArbitraryDates() method
+    public static LocalDate[] threeArbitraryDates(){
+        LocalDate[] dates = new LocalDate[3];
+        dates[0] = LocalDate.now();
+        dates[1] = LocalDate.now().plusDays(4);
+        dates[2] = LocalDate.now().plusDays(10);
+        return dates;
+    }
 
     /**
      * Create a static method named nullsToArbitraryStrings() that accepts an
@@ -51,6 +65,13 @@ public class ArrayKatas {
      * @return an array of five string where null values have been replaced with arbitrary strings
      */
     // todo: create nullsToArbitraryStrings() method
+    public static String[] nullsToArbitraryStrings(String[] source){
+        for(int x = 0 ; x < 5 ; x++) {
+            if (source[x] == null) source[x] = "one";
+        }
+
+        return source;
+    }
 
     /**
      * Create a static method named arrayIndexes() that accepts a single integer
@@ -64,5 +85,14 @@ public class ArrayKatas {
      * @return An array of ints, starting at 0 and continuing to n-1
      */
     // todo: create arrayIndexes() method
+    public static int[] arrayIndexes(int n){
+        int[] indexes = new int[n];
+
+        for(int x = 0 ; x < n ; x++){
+            indexes[x] = x;
+        }
+
+        return indexes;
+    }
 
 }
